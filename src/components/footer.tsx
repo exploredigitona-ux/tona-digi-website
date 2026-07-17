@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { brand, navLinks, services, socialLinks } from "@/lib/data";
 import { ButtonLink, Container } from "@/components/ui";
 
@@ -10,9 +11,13 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex size-11 items-center justify-center rounded-md bg-blue-500 text-white">
-                <Sparkles className="size-5" aria-hidden="true" />
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Digi Tona Logo"
+                width={52}
+                height={52}
+                className="size-[52px] shrink-0 rounded-md object-contain"
+              />
               <div>
                 <p className="font-semibold text-white">{brand.name}</p>
                 <p className="text-sm text-slate-400">{brand.title}</p>
