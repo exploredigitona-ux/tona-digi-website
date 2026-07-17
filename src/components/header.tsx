@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { brand, navLinks } from "@/lib/data";
 import { clsx } from "clsx";
@@ -13,12 +14,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label={`${brand.name} home`}>
-          <span className="flex size-11 items-center justify-center rounded-md bg-blue-500 text-white shadow-[0_0_24px_rgba(59,130,246,0.42)]">
-            <Sparkles className="size-5" aria-hidden="true" />
+      <div className="mx-auto flex h-[clamp(6.5rem,10vw,8rem)] max-w-7xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8">
+        <Link href="/" className="flex h-full min-w-0 items-center gap-3" aria-label={`${brand.name} home`}>
+          <span className="relative size-[clamp(5.5rem,8.5vw,6.75rem)] shrink-0 overflow-hidden rounded-md">
+            <Image
+              src="/logo.png"
+              alt="Digi Tona Logo"
+              fill
+              sizes="(min-width: 1024px) 108px, 88px"
+              priority
+              className="object-cover scale-[1.35]"
+            />
           </span>
-          <span>
+          <span className="min-w-0">
             <span className="block text-sm font-semibold uppercase tracking-[0.18em] text-white">
               Explore Digi Tona
             </span>
