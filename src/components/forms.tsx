@@ -1,20 +1,51 @@
 "use client";
 
 import { Send } from "lucide-react";
-import { services } from "@/lib/data";
+import { brand, services } from "@/lib/data";
 
 const inputClass =
   "w-full rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20";
+const formSubmitEndpoint = `https://formsubmit.co/ajax/${brand.email}`;
 
 export function ContactForm({ consultation = false }: { consultation?: boolean }) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: new FormData(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("FormSubmit request failed");
+      }
+
+      form.reset();
+      alert("Thank you. Your request has been sent to Explore Digi Tona.");
+    } catch {
+      alert("Sorry, the message could not be sent. Please try again or email Explore Digi Tona directly.");
+    }
+  }
+
   return (
     <form
+      action={formSubmitEndpoint}
+      method="POST"
       className="grid gap-4"
-      onSubmit={(event) => {
-        event.preventDefault();
-        alert("Thank you. Your request has been prepared for Explore Digi Tona.");
-      }}
+      onSubmit={handleSubmit}
     >
+      <input
+        type="hidden"
+        name="_subject"
+        value={consultation ? "New consultation request from Explore Digi Tona website" : "New contact message from Explore Digi Tona website"}
+      />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm font-medium text-slate-200">
           Full Name
