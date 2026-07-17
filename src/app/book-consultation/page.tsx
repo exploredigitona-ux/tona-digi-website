@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Book Consultation",
   description:
     "Request a professional consultation with Explore Digi Tona for AI marketing, SEO, digital strategy, and growth planning.",
+  alternates: {
+    canonical: "/book-consultation",
+  },
 };
 
 const expectations = [

@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BlogBrowser } from "@/components/blog-browser";
 import { PageTransition, Reveal } from "@/components/motion";
 import { Container, GlassCard, SectionHeader } from "@/components/ui";
-import { blogPosts } from "@/lib/data";
+import { blogPosts, brand } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Explore articles on AI marketing, SEO, digital marketing, social media marketing, content marketing, and business growth.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogPage() {
@@ -33,7 +37,12 @@ export default function BlogPage() {
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-white">{featured.title}</h2>
                 <p className="mt-4 text-base leading-8 text-slate-300">{featured.excerpt}</p>
-                <p className="mt-6 text-sm text-slate-500">{featured.readTime}</p>
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="mt-6 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200"
+                >
+                  Read article on {brand.name} - {featured.readTime}
+                </Link>
               </div>
             </GlassCard>
           </Reveal>

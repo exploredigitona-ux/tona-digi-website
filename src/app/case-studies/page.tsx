@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "AI marketing case studies and demonstration projects showing strategy, automation, SEO, content systems, and growth consulting outcomes by Explore Digi Tona.",
+  alternates: {
+    canonical: "/case-studies",
+  },
 };
 
 const caseStudies = [

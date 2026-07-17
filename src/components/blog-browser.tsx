@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { blogPosts, categories } from "@/lib/data";
@@ -58,11 +59,17 @@ export function BlogBrowser() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
               {post.category}
             </p>
-            <h2 className="mt-4 text-xl font-semibold text-white">{post.title}</h2>
+            <h2 className="mt-4 text-xl font-semibold text-white">
+              <Link href={`/blog/${post.slug}`} className="transition hover:text-cyan-300">
+                {post.title}
+              </Link>
+            </h2>
             <p className="mt-3 text-sm leading-7 text-slate-400">{post.excerpt}</p>
             <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
               <span>{new Date(post.date).toLocaleDateString("en", { month: "short", day: "numeric", year: "numeric" })}</span>
-              <span>{post.readTime}</span>
+              <Link href={`/blog/${post.slug}`} className="font-semibold text-cyan-300 hover:text-cyan-200">
+                {post.readTime}
+              </Link>
             </div>
           </GlassCard>
         ))}

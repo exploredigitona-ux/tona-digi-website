@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Featured marketing campaigns, SEO projects, website consulting projects, case studies, results, and outcomes by Explore Digi Tona.",
+  alternates: {
+    canonical: "/portfolio",
+  },
 };
 
 const groups = [

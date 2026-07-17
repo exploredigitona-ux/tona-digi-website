@@ -5,6 +5,9 @@ import { Container, GlassCard, SectionHeader } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of service for Explore Digi Tona.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
 };
 
 export default function TermsOfServicePage() {

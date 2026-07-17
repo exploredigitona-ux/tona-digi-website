@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "About Tona Shahi Thakuri",
   description:
     "Learn about Tona Shahi Thakuri, founder of Explore Digi Tona and AI Marketing Consultant in Kathmandu, Nepal.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const sections = [

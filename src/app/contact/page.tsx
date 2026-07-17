@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact Explore Digi Tona for AI marketing consulting, SEO, content marketing, and digital growth strategy.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

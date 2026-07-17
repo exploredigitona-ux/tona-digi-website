@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Explore AI marketing consulting, SEO, content marketing, social media marketing, website consulting, and analytics services.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

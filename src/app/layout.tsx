@@ -7,6 +7,8 @@ import { ScrollProgress } from "@/components/motion";
 import { brand } from "@/lib/data";
 import "./globals.css";
 
+const ogImage = `${brand.url}/og-image.png`;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -37,6 +39,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: brand.founder }],
   creator: brand.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -44,11 +49,20 @@ export const metadata: Metadata = {
     siteName: brand.name,
     title: `${brand.name} | AI Marketing Consultant`,
     description: brand.description,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${brand.name} - AI Marketing Consultant`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${brand.name} | AI Marketing Consultant`,
     description: brand.description,
+    images: [ogImage],
   },
   robots: {
     index: true,

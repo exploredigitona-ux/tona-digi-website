@@ -5,6 +5,9 @@ import { Container, GlassCard, SectionHeader } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy for Explore Digi Tona.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
