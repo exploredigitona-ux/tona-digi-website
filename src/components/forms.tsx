@@ -26,7 +26,11 @@ export function ContactForm({ consultation = false }: { consultation?: boolean }
       }
 
       form.reset();
-      alert("Thank you. Your request has been sent to Explore Digi Tona.");
+      alert(
+        consultation
+          ? "Thank you! Your consultation request has been sent successfully. We will contact you soon."
+          : "Thank you. Your request has been sent to Explore Digi Tona.",
+      );
     } catch {
       alert("Sorry, the message could not be sent. Please try again or email Explore Digi Tona directly.");
     }
