@@ -14,14 +14,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
-      <div className="mx-auto flex h-[clamp(5rem,6.5vw,6rem)] max-w-7xl items-center justify-between gap-6 px-4 py-2 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[112px] lg:px-8">
         <Link href="/" className="flex h-full min-w-0 items-center gap-3" aria-label={`${brand.name} home`}>
-          <span className="relative size-[clamp(4.25rem,5.25vw,5rem)] shrink-0 overflow-hidden rounded-md">
+          <span className="relative size-[76px] shrink-0 overflow-hidden rounded-md lg:size-[108px]">
             <Image
               src="/logo.png"
               alt="Digi Tona Logo"
               fill
-              sizes="(min-width: 1024px) 80px, 68px"
+              sizes="(min-width: 1024px) 108px, 76px"
               priority
               className="object-contain"
             />
